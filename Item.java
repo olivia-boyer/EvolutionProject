@@ -1,5 +1,7 @@
-
+//class for items. All same type, for non-crops, sell Price and harvests =
 public class Item {
+
+
 
     public enum Type {
       EMPTY,
@@ -52,3 +54,4 @@ public class Item {
       return cost;
     }
 }
+
