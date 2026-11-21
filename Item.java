@@ -2,10 +2,10 @@
 public class Item {
 
     public enum Type {
-	EMPTY,
-	CROP,
-	SPRINKER,
-	SCARECROW
+      EMPTY,
+      CROP,
+      SPRINKER,
+      SCARECROW
     }
 
     int id; //number for grid
@@ -21,26 +21,26 @@ public class Item {
     final int season = 28;
 
     public Item(int id, String name, Type type, int cost, int sellPrice, int growTime, int regrowTime, int effectiveRadius) {
-	this.id = id;
-	this.name = name;
-	this.type = type;
-	this.cost = cost;
-	this.sellPrice = sellPrice;
-	this.growTime = growTime;
-	this.regrowTime = regrowTime;
-	this.effectiveRadius = effectiveRadius;
-	this.maxHarvest = computeMaxHarvest(season);	
+      this.id = id;
+      this.name = name;
+      this.type = type;
+      this.cost = cost;
+      this.sellPrice = sellPrice;
+      this.growTime = growTime;
+      this.regrowTime = regrowTime;
+      this.effectiveRadius = effectiveRadius;
+      this.maxHarvest = computeMaxHarvest(season);
     }
 
     private int computeMaxHarvest(int days){
-	int growDays = days - 1;
-	if (type != Type.CROP || growTime > growDays) {
-	    return 0;
-	}
-	if (regrowTime == 0) {
-	    return growDays / growTime;
-	} else {
-	    return 1 + (growDays - growTime) / regrowTime;
-	}
+      int growDays = days - 1;
+      if (type != Type.CROP || growTime > growDays) {
+        return 0;
+      }
+      if (regrowTime == 0) {
+        return growDays / growTime;
+      } else {
+        return 1 + (growDays - growTime) / regrowTime;
+      }
     }
 }
