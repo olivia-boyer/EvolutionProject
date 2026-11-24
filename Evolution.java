@@ -23,6 +23,10 @@ public class Evolution {
         itemList[16] = new Item(16, "taro root", Item.Type.CROP, 20*2, 100, 10, 0, 0); //TODO: account for pond issue
         itemList[17] = new Item(17, "tea leaves", Item.Type.CROP, 50, 50, 20, 1, 0);
         itemList[18] = new Item(18, "mixed seeds",Item.Type.CROP, 30 * (0+0+4+7)/4, (50+40+90+ 25) / 4, (14+6+4+5)/4, (4+3+0+0)/4, 0);//averaging values of possible crops
+        itemList[19] = new Item(19, "Sprinkler", Item.Type.SPRINKER, 180, 0, 0, 0, 4);
+        itemList[20] = new Item(20, "Quality Sprinkler", Item.Type.SPRINKER, 420, 0, 0, 0, 8);
+        itemList[21] = new Item(21, "Iridium Sprinkler", Item.Type.SPRINKER, 1750, 0, 0, 0, 24);
+        itemList[22] = new Item(22, "Scarecrow", Item.Type.SCARECROW, 135, 0, 0, 0, 0);
 
     }
         
