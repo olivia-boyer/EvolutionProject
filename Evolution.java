@@ -1,7 +1,11 @@
 import java.util.ArrayList;
+import java.util.Random;
+import java.util.random.*;
 
 public class Evolution {
     private static Item[] itemList = new Item[25];
+    private Farm p1; //first parent
+    private Farm p2; //second parent
 
     private static void initializeItems() {
         itemList[0] = new Item(0,"empty",null,0,0,0,0, 0);
@@ -32,18 +36,39 @@ public class Evolution {
     
     
     //roullette based selection
-    public static void roullette(ArrayList<Farm> farms) {
+    //assigns first choice to p1 and second to p2
+    private static void roullette(ArrayList<Farm> farms) {
+        Random rand = new Random();
+        float choice = rand.nextFloat();
 
     }
 
     //rank based selection
-    public static void rank(ArrayList<Farm> farms) {
+    //assigns first choice to p1 and second to p2
+    private static void rank(ArrayList<Farm> farms) {
+        Random rand = new Random();
+        float choice = rand.nextFloat(); 
+    }
+
+    //creates offspring from p1 and p2
+    //returns true on success and false on failure
+    private static boolean fusion() {
+        return false;
+    }
+
+    //function to create mutations on new offspring
+    private static void mutate(Farm farm) {
 
     }
 
     //function to do the evolution
-    public static void evolve(ArrayList<Farm> farms) {
-
+    private static void evolve(ArrayList<Farm> farms) {
+        roullette(farms);
+        fusion();
+        int children = 4; //number of children produced in fusion
+        for (int i = farms.size() - children; i < farms.size(); i++) {
+            mutate(farms.get(i));
+        }
     }
     
     public static void main(String[] args) {
@@ -63,6 +88,7 @@ public class Evolution {
             keepgoin = false; //placeholder, stop loop after time limit exceeded or sufficent solution found.
             evolve(Farms);
         }
+        //return highest fitness farm
        
     }
 
