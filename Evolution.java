@@ -56,9 +56,20 @@ public class Evolution {
         return false;
     }
 
+    //theoretically done
     //function to create mutations on new offspring
     private static void mutate(Farm farm) {
+        Random rand = new Random();
+        int count = rand.nextInt(0, 40); //number of mutations. maximum is a little over 1% of total area
+        for (int i = 0; i < count; i++) {
+            //get location to change
+            int row = rand.nextInt(0,52);
+            int col = rand.nextInt(0,72);
 
+            if (farm.layout[row][col] >= 0) { //can't change blocked off sections
+                farm.layout[row][col] = rand.nextInt(0,itemList.length-1); //change to random item
+            }
+        }
     }
 
     //function to do the evolution

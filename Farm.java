@@ -36,12 +36,26 @@ public class Farm{
           // small pond
           
         };
-        
+
       }
 
     }
 
     public void randomize() {}
+
+        //returns array of squares covered by scarecrows
+    //true => protected
+    //false => not protected
+    public boolean[][] scarecrows() {
+      return null;
+    }
+
+    //returns array of squares covered by sprinklers
+    //true => watered
+    //false => not watered
+    public boolean[][] sprinklers() {
+      return null;
+    }
 
     public double getFitness() {
         return 0.0;
