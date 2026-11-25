@@ -10,7 +10,7 @@ public class Farm{
       public final int UNPLANTABLE = -1;
       public final int POND = -2;
 
-      private final int[][] BASE_MAP = = createBaseMap();
+      private final int[][] BASE_MAP = createBaseMap();
 
       public int[][] layout;
 

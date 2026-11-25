@@ -1,9 +1,9 @@
-
+import java.util.ArrayList;
 
 public class Evolution {
-    private Item[] itemList = new Item[25];
+    private static Item[] itemList = new Item[25];
 
-    private void initializeItems() {
+    private static void initializeItems() {
         itemList[0] = new Item(0,"empty",null,0,0,0,0, 0);
         itemList[1] = new Item(1, "blueberry", Item.Type.CROP, 80, 50*3, 13, 4, 0);
         itemList[2] = new Item(2, "corn", Item.Type.CROP, 150, 50, 14, 4, 0);
@@ -23,13 +23,49 @@ public class Evolution {
         itemList[16] = new Item(16, "taro root", Item.Type.CROP, 20*2, 100, 10, 0, 0); //TODO: account for pond issue
         itemList[17] = new Item(17, "tea leaves", Item.Type.CROP, 50, 50, 20, 1, 0);
         itemList[18] = new Item(18, "mixed seeds",Item.Type.CROP, 30 * (0+0+4+7)/4, (50+40+90+ 25) / 4, (14+6+4+5)/4, (4+3+0+0)/4, 0);//averaging values of possible crops
-        itemList[19] = new Item(19, "Sprinkler", Item.Type.SPRINKER, 180, 0, 0, 0, 4);
-        itemList[20] = new Item(20, "Quality Sprinkler", Item.Type.SPRINKER, 420, 0, 0, 0, 8);
-        itemList[21] = new Item(21, "Iridium Sprinkler", Item.Type.SPRINKER, 1750, 0, 0, 0, 24);
+        itemList[19] = new Item(19, "Sprinkler", Item.Type.SPRINKLER, 180, 0, 0, 0, 4);
+        itemList[20] = new Item(20, "Quality Sprinkler", Item.Type.SPRINKLER, 420, 0, 0, 0, 8);
+        itemList[21] = new Item(21, "Iridium Sprinkler", Item.Type.SPRINKLER, 1750, 0, 0, 0, 24);
         itemList[22] = new Item(22, "Scarecrow", Item.Type.SCARECROW, 135, 0, 0, 0, 0);
 
     }
-        
+    
+    
+    //roullette based selection
+    public static void roullette(ArrayList<Farm> farms) {
+
+    }
+
+    //rank based selection
+    public static void rank(ArrayList<Farm> farms) {
+
+    }
+
+    //function to do the evolution
+    public static void evolve(ArrayList<Farm> farms) {
+
+    }
+    
+    public static void main(String[] args) {
+        initializeItems(); //initialize the item array
+
+        //Create initial population let's do like 10 (?)
+        ArrayList<Farm> Farms = new ArrayList<Farm>(100);
+
+        for (int i = 0; i < 10; i++) {
+            //
+            Farms.add(new Farm());
+            Farms.get(i).randomize();
+        }
+        //loop of evolution
+        boolean keepgoin = true; //
+        while(keepgoin) {
+            keepgoin = false; //placeholder, stop loop after time limit exceeded or sufficent solution found.
+            evolve(Farms);
+        }
+       
+    }
+
 
 
 
